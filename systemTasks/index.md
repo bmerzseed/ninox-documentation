@@ -6,3 +6,4 @@ This section does not go into great detail about day to day operation of the sys
 - [Restarting Python scripts](pythonScripts.md)
 - [Common printing issues](printingIssues.md)
 - [Changing stock update frequency](stockUpdates.md)
+- [Common Integromat Errors](integromatErrors.md)
