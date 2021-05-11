@@ -5,3 +5,4 @@ System tasks does not go into great detail about day to day operation of the sys
 - [Adding new small packet pictures to Ninox](smallPacketPics.md)
 - [Restarting Python scripts](pythonScripts.md)
 - [Common printing issues](printingIssues.md)
+- [Changing stock update frequency](stockUpdates.md)
