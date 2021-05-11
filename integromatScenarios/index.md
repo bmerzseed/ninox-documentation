@@ -14,24 +14,24 @@ Some common Integromat errors we recieve can be found [here](../systemTasks/inte
 
 Below is a list of links to pages for each scenario.
 
-- [A4 Printing]
-- [Batch print dropbox err handling]
-- [Batch printing/ barcode]
-- [Clear dropbox printing folders]
-- [Multiple batch printing]
-- [Ninox reprinting]
-- [Seedlot barcoding]
-- [Stock control timed trigger]
-- [Stock control updates]
-- [Ninox Duplicate Alerts]
-- [Overnight routine to create Xero invoices from Ninox 11am and 9pm]
-- [Send emails via Ninox]
-- [Set unset Ninox order complete states]
-- [Get new shopify products and add variants to Ninox]
-- [Get Shopify product ID and add to component product in Ninox]
-- [Missing Shopify orders sent to Ninox]
-- [TEST - Updated product in Shopify]
-- [Create credit notes in Xero from Ninox 1.0]
-- [Find Xero Customer ID and add to component product in Ninox]
-- [Ninox to Xero New Invoice 2.0]
--
+- [A4 Printing](a4Printing.md)
+- [Batch print dropbox err handling](batchPrintErrHandling.md)
+- [Batch printing/ barcode](batchPrintingBarcode.md)
+- [Clear dropbox printing folders](clearDropboxFolders.md)
+- [Multiple batch printing](multipleBatchPrinting.md)
+- [Ninox reprinting](ninoxReprinting.md)
+- [Seedlot barcoding](seedlotBarcoding.md)
+- [Stock control timed trigger](stockControlTrigger.md)
+- [Stock control updates](stockControlUpdates.md)
+- [Ninox Duplicate Alerts](ninoxDuplicateAlerts.md)
+- [Overnight routine to create Xero invoices from Ninox 11am and 9pm](overnightRoutineXero.md)
+- [Send emails via Ninox](ninoxEmails.md)
+- [Set unset Ninox order complete states](setUnsetOrderStates.md)
+- [Get new shopify products and add variants to Ninox](getNewShopifyProds.md)
+- [Get Shopify product ID and add to component product in Ninox](getShopifyID.md)
+- [Missing Shopify orders sent to Ninox](missingShopifyOrders.md)
+- [Shopify orders sent to Ninox 2.0](shopifyOrdersToNinox.md)
+- [Updated shopify Product to Ninox 2.0](updatedShopifyProd.md)
+- [Create credit notes in Xero from Ninox 1.0](createCNXero.md)
+- [Find Xero Customer ID and add to component product in Ninox](findXeroCustID.md)
+- [Ninox to Xero New Invoice 2.0](ninoxToXeroNewInvoice.md)
