@@ -1,4 +1,4 @@
-## System Tasks
+# System Tasks
 
 System tasks does not go into great detail about day to day operation of the system, but instead covers some more uncommon tasks users may need to perform, and also what to do if certain issues arise.
 

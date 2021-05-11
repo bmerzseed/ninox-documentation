@@ -1,4 +1,4 @@
-## Welcome to the documentation to the Ninox system.
+# Home
 
 This documentation is split into four main sections.
 
