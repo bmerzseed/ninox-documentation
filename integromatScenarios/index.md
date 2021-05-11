@@ -13,3 +13,25 @@ Some of the scenarios are also timed. Timed scenarios are especially useful when
 Some common Integromat errors we recieve can be found [here](../systemTasks/integromatErrors.md).
 
 Below is a list of links to pages for each scenario.
+
+- [A4 Printing]
+- [Batch print dropbox err handling]
+- [Batch printing/ barcode]
+- [Clear dropbox printing folders]
+- [Multiple batch printing]
+- [Ninox reprinting]
+- [Seedlot barcoding]
+- [Stock control timed trigger]
+- [Stock control updates]
+- [Ninox Duplicate Alerts]
+- [Overnight routine to create Xero invoices from Ninox 11am and 9pm]
+- [Send emails via Ninox]
+- [Set unset Ninox order complete states]
+- [Get new shopify products and add variants to Ninox]
+- [Get Shopify product ID and add to component product in Ninox]
+- [Missing Shopify orders sent to Ninox]
+- [TEST - Updated product in Shopify]
+- [Create credit notes in Xero from Ninox 1.0]
+- [Find Xero Customer ID and add to component product in Ninox]
+- [Ninox to Xero New Invoice 2.0]
+-
