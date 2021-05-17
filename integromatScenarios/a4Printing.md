@@ -3,12 +3,12 @@
 This scenario is used to print invoices and lists of seedlots to make up batches.
 It works via a webhook. We send data from Ninox to the webhook with a POST request, this data consists of:
 
-''' json
+```json
 {
 url: the url to download the file from
 data: the invoice code/ seedlot list code, used in the error emails
 }
-'''
+```
 
 Once the data is received, we download the file from that url, and upload it to the /sales/ninox/drop print folders/a4 folder in dropbox, where it is printed by ‘batch print output pdf’ from the iMac.
 
