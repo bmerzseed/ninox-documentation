@@ -2,6 +2,7 @@
 
 This section covers the global functions used in the system, along with some general information about the system and the way Ninox works.
 
+- [General Notes](generalNotes.md)
 - [Colour Scheme](colourScheme.md)
 - [Global Functions](globalFunctionsInfo.md)
   - [getAllowance(productType: text)](globalFunctions/getAllowance.md)
