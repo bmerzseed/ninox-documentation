@@ -6,7 +6,7 @@ Headings have no border, and buttons have a <span style = 'color:rgb(209, 71, 33
 
 We use the following RGB values for each of the colours
 
-- <span style = 'color:rgb(99, 134, 57)'> Green <span> (99, 134, 57)
+- <span style = 'color:rgb(99, 134, 57)'> Green </span> (99, 134, 57)
 - <span style = 'color:rgb(130, 71, 30)'> Brown </span> (130, 71, 30)
 - <span style = 'color:rgb(179, 203, 237)'> Light Blue </span> (179, 203, 237)
 - <span style = 'color:rgb(0, 112, 177)'> Dark Blue </span> (0, 112, 177)
