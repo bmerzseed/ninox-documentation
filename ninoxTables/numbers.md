@@ -1,4 +1,6 @@
-# The numbers table contains a single record & 3 different number fields:
+# Numbers
+
+The numbers table contains a single record & 3 different number fields:
 
 - Manual Order Number
 
