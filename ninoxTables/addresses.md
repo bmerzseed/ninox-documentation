@@ -6,7 +6,7 @@ The main difference is that the delivery address table has a button ‘billing a
 
 Addresses are linked to orders (one address can have many orders). When creating a new order within Ninox, the user has a choice of using existing addresses, or creating new addresses (by pressing the ‘+’ icon on the address fields’
 
-When an order is imported from shopify, integromat will first check if a corresponding billing/ shipping addresses already exist, if so, it will link these to the order, if not, new address records will be created with the provided information and will be linked to the order.
+When an order is imported from Shopify (via the [Shopify Orders to Ninox](../integromatScenarios/shopifyOrdersToNinox.md) scenario), Integromat will first check if a corresponding billing/ shipping addresses already exists, if so, it will link these to the order, if not, new address records will be created with the provided information and will be linked to the order.
 
 Addresses can also be viewed from a customer record, though there is no direct link from the customer to either address table, it will show any addresses linked to orders which are linked to that customer.
 
