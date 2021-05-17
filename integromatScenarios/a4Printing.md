@@ -5,8 +5,8 @@ It works via a webhook. We send data from Ninox to the webhook with a POST reque
 
 ```json
 {
-url: the url to download the file from
-data: the invoice code/ seedlot list code, used in the error emails
+  "url": "the url to download the file from",
+  "data": "the invoice code/ seedlot list code, used in the error emails"
 }
 ```
 
