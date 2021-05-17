@@ -1,6 +1,6 @@
 # Packets Dashboard
 
-The packets dashboard is used for creating new batches, adjusting the size of batches, disassembling packets from batches, and adjusting the remaining size of a seedlot. There also exists ‘seedlot creation’, but this is currently obsolete & will be moved to the purchase order section.
+The packets dashboard is used for creating new [batches](batches.md), adjusting the size of batches, disassembling packets from batches, and adjusting the remaining size of a [seedlot](seedlots.md). There also exists ‘seedlot creation’, but this is currently obsolete & will be moved to the purchase order section.
 
 Along with being used as a form in order to perform the actions, the underlying table data of the packets dashboard is used to save information about any actions made, allowing users to look back in future & see when and why these actions were performed, and the exact changes made. These can either be viewed directly using the table, or through the ‘operations log’ view found on both batches and seedlots.
 
