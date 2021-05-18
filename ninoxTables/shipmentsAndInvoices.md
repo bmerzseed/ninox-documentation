@@ -2,25 +2,25 @@
 
 The shipments and invoices table is used to store information about picklists/ shipments, invoice print views are also generated from this table.
 
-The table is a child of the orders table, meaning any 1 sales order can have many ‘shipment & invoices records’.
+The table is a child of the [orders](salesOrders.md) table, meaning any 1 sales order can have many ‘shipment & invoices records’.
 
 The ‘shipments & invoices’ table also has 3 one to many relationships (i.e. 1 ‘shipment and invoices’ record can have many of these other records).
 
-Firstly with ‘shipment & invoice line items’
+Firstly with [shipment & invoice line items](shipmentInvoiceLines.md)
 
-- Each links to a ‘sales order items’ record, there can be many ‘shipment & invoice line items’ for each ‘sales order item’. When the ‘shipment and invoices’ record is generated via the generate picklists button, ‘shipment & invoices line items’ records are created for all ‘sales order items’ on the order with ‘quantity remaining to be assigned to shipments/cn’s’ > 0, these lines are then linked to the shipment record.
+- Each links to a [sales order items](salesOrderItems.md) record, there can be many ‘shipment & invoice line items’ for each ‘sales order item’. When the ‘shipment and invoices’ record is generated via the generate picklists button, ‘shipment & invoices line items’ records are created for all ‘sales order items’ on the order with ‘quantity remaining to be assigned to shipments/cn’s’ > 0, these lines are then linked to the shipment record.
 
-Secondly with ‘additional costs’
+Secondly with [additional costs](additionalCosts.md)
 
 - Additional costs (very often shipping) do not need to be allocated manually by users, but we only want them to on 1 invoice, so when generating ‘picklists’/ ‘shipment and invoice’ records via the generate picklists buttons, we link any unlinked cost records the ‘shipment & invoices’ record generated in order to ensure the customer sees these costs on at least 1 invoice.
 
-And finally with ‘invoices view’
+And finally with [invoices view](invoicesView.md)
 
 - When a shipment is completed (via the complete shipment button), we also generate an ‘invoices view’ record and link it to the ‘shipment and invoices record’, this means under normal circumstances, there will only ever be 1 ‘invoices view’ record for each ‘shipment and invoices’ record. This table is unused, and primarily serves as a way to view the invoice data without opening a PDF.
 
 Functionally, the shipment record itself primarily serves as the entry point to the picking process.
 
-The records are generally accessed via the ‘shipments to pick’ table, which displays a list of all the ‘shipment and invoices’ records which are not completed, and are ‘readyToPick’
+The records are generally accessed via the [shipments to pick](shipmentsReady.md) table, which displays a list of all the ‘shipment and invoices’ records which are not completed, and are ‘readyToPick’
 
 - readyToPick is a formula value on the ‘shipment and invoices’ record. It is true if all ‘shipment and invoices’ lines are themselves ‘readyToAllocate’. We calculate this by taking the min value of all of the lines ‘readyToAllocate’ value.
   - We consider lines as ‘readyToAllocate’ either if they are already allocated, or if there is enough of that ‘saleable product’ made up to allocate them.
