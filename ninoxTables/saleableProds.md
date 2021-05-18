@@ -78,5 +78,23 @@ The table also stores a variety of information within it, and has a collection o
 
 - Shopify product ID/ variant ID
   - internal product ID's stored within Shopify
+  - used for stock control purposes, and when adding new orders placed on shopify via integromat ([Shopify orders to Ninox](shopifyOrdersToNinox.md))
 - Create batch
   - shortcut to creating a batch of this product, opens the product dashboard with some prefilled information
+
+Show view...
+
+If admin mode is activated, a series of additional formulae/ options/ fields will be available to view (almost all of which are related to stock control)
+
+- shopifyIsForSale
+- ninoxCanSell
+- ninoxCanSellOverride
+- saleStateChanged
+- minTotalSeedlotQuantity
+- Stock needed for items waiting to be assigned to shipments
+-
+
+This table also has an additional 'sales history' tab.
+
+- This contains a list of [past sales](pastSales.md) for each month of the year displayed in table view
+- Along with this same data displayed in tabular form
