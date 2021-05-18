@@ -12,7 +12,7 @@ Firstly with ‘shipment & invoice line items’
 
 Secondly with ‘additional costs’
 
-- Additional costs (very often shipping) do not need to be allocated, but we only want them to on 1 invoice, so when generating ‘picklists’/ ‘shipment and invoice’ records via the generate picklists buttons, we link any unlinked cost records the ‘shipment & invoices’ record generated in order to ensure the customer sees these costs on at least 1 invoice.
+- Additional costs (very often shipping) do not need to be allocated manually by users, but we only want them to on 1 invoice, so when generating ‘picklists’/ ‘shipment and invoice’ records via the generate picklists buttons, we link any unlinked cost records the ‘shipment & invoices’ record generated in order to ensure the customer sees these costs on at least 1 invoice.
 
 And finally with ‘invoices view’
 
