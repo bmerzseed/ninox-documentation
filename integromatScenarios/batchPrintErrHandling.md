@@ -1,22 +1,25 @@
 # Batch print dropbox err handling
 
-This scenario was created to handle errors from the ‘batch printing/ barcoding’ scenario.
+This scenario was created to handle errors from the [batch printing/ barcoding](batchPrintingBarcode.md) scenario.
 
 Initially, we were only occasionally having batches fail to print (usually 1x a week) due to dropbox 429 runtime errors (too many writes), which occur when multiple sources are trying to write to dropbox simultaneously. We could quickly reprint these batches within Ninox and it was only a small issue.
 
 After one weekend, these errors started occurring much more frequently (close to 1/3 batches).
 
-One solution was to add sleep timers throughout the batch printing scenarios, causing less writes to dropbox, but while this helped it did not completely solve the problem, so something was needed to handle the errors still occuring.
+One solution was to add sleep timers throughout the batch printing scenarios, causing less writes to Dropbox, but while this helped it did not completely solve the problem, so something was needed to handle the errors still occuring.
 
-The scenario works via a webhook, this webhook is called from the ‘batch printing/ barcode’ scenario should a dropbox upload fail. The webhook takes the following data:
+The scenario works via a webhook, this webhook is called from the ‘batch printing/ barcode’ scenario should a dropbox upload fail.
+
+Example webhook data:
 
 ```json
 {
-  "url": "the url used to download the batch pdf",
-  "data": "the batch number",
-  "size": "the size of the batch, and number of packets/ labels to be printed",
-  "type": "whether the batch is of bulks (bk) or small packets (sm)",
-  "errString": "the error string from ninox, contained in the error email in this scenario if it fails too many times"
+  "type": "sm",                                       `whether small packet (sm) or bulk (bk)`
+  "url": "https://dbde0027.ninox.com/data",           `file download url`
+  "data": 15123,                                      `batch number`
+  "size": 50,                                         `batch size`
+  "errString": "[Collection] -> RuntimeError -> [429] too_many_write_operations/. -> "
+                                                      `error string generated from integromat error`
 }
 ```
 
