@@ -2,13 +2,13 @@
 
 This scenario was created to handle errors from the [batch printing/ barcoding](batchPrintingBarcode.md) scenario.
 
-Initially, we were only occasionally having batches fail to print (usually 1x a week) due to dropbox 429 runtime errors (too many writes), which occur when multiple sources are trying to write to dropbox simultaneously. We could quickly reprint these batches within Ninox and it was only a small issue.
+Initially, we were only occasionally having batches fail to print (usually 1x a week) due to Dropbox 429 runtime errors (too many writes), which occur when multiple sources are trying to write to Dropbox simultaneously. We could quickly reprint these batches within Ninox and it was only a small issue.
 
 After one weekend, these errors started occurring much more frequently (close to 1/3 batches).
 
 One solution was to add sleep timers throughout the batch printing scenarios, causing less writes to Dropbox, but while this helped it did not completely solve the problem, so something was needed to handle the errors still occuring.
 
-The scenario works via a webhook, this webhook is called from the ‘batch printing/ barcode’ scenario should a dropbox upload fail.
+The scenario works via a webhook, this webhook is called from the [batch printing/ barcoding](batchPrintingBarcode.md) scenario should a Dropbox upload fail.
 
 Example webhook data:
 
