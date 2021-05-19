@@ -16,6 +16,6 @@ Ninox tables contains an overview of each of the different tables within Ninox. 
 
 Integromat Scenarios covers the different scenarios used in Integromat. For each, there is a summary of its purpose, an explanation of how it works, and how it interacts with the rest of the system (Ninox, other scenarios, Python scripts, Xero, Shopify etc.)
 
-### [System Tasks](systemTasks/index.md)
+### [System Tasks/ Scripts](systemTasks/index.md)
 
-System tasks does not go into great detail about day to day operation of the system, but instead covers some more uncommon tasks users may need to perform, and also what to do if certain issues arise.
+System tasks does not go into great detail about day to day operation of the system, but instead covers some more uncommon tasks users may need to perform, and also what to do if certain issues arise. It also contains a section covering the Python scripts used.
