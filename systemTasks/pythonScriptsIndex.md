@@ -17,4 +17,4 @@ Along with these 2 scripts which are always working, there have been a number of
 The 2 scripts that run regularly today are:
 
 - [Printing helper](pythonScripts/printHelper.md)
-- [dupesChecker](pythonScripts/dupesChecker.md)
+- [Duplicate Checker](pythonScripts/dupesChecker.md)
