@@ -30,7 +30,7 @@ Now, there is a router which goes in one direction for bulk labels (type = bk), 
 - /Sales/Ninox/Drop Print Folders/smIn for small packets
 - /Sales/Ninox/Drop Print Folders/bkIn for bulk labels
 
-We then sleep for a second once again, and rename the uploaded file to `{Batch Num}-{Batch Size}.pdf`, e.g. to '15123-50.pdf' using the example data.
+We then sleep for a second once again, and rename the uploaded file to `{Batch Num}-{Batch Size}.pdf`, e.g. to `15123-50.pdf` using the example data.
 
 If at any point during the above stages of executions a Dropbox upload fails, the [batch print err handling](batchPrintErrHandling.md) scenario will be called. If calling this scenario fails, an email will be sent directly to the Seed Shop email alerting you of this.
 
