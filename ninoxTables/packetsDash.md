@@ -62,3 +62,32 @@ The fields used to enter information when performing a ‘batch disassembly’ o
 ## Seedlot Adjustments
 
 ### unfinished
+
+# Packets Dashboard
+
+The packets dashboard is one of the most complicated tables in the system, it is used for performing and recording a number of different operations on [Batches](batches.md) and [Seedlots](seedlots.md). This was one of the first parts of the system to be created.
+
+In hindsight, things likely would have been cleaner if each operation lied within its own table, but migrating all of the logic and data to do this would be time consuming with little to no functional benefit.
+
+Records in this table are created and accessed via buttons under the `new packets and adjustments` section on [home](home.md), buttons on the [packing dashboard](packingDash.md), and buttons on other packets dashboard records.
+
+The table works by displaying/ hiding fields based the value of 2 choice fields
+
+- `batch action` for creation/ adjustment/ disassembly of batches
+- `seedlot action` for the adjustment (and previously creation) of seedlots
+
+Additionally, the `locked` field is used throughout to restrict data entry/ modification once an operation has been completed (via the `writable if` option).
+
+Operations performed through this table can be seen via the `operations log` option of the `show view` choice on batch/ seedlot records.
+
+Below, the way in which each of the possible operations work is explained.
+
+# Batch creation
+
+# Batch adjustment/ disassembly
+
+# Seedlot adjustment
+
+# Seedlot zeroing & batch creation
+
+# Seedlot creation
