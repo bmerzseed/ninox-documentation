@@ -15,7 +15,7 @@ For each month of the year, we have 2 fields in each record
 
 The formula fields work by passing the current month number(1 - 12), and the `saleable product` record into the [getSalesCount()](../ninoxGeneral/globalFunctions/getSalesCount.md) global function.
 
-- e.g. `getSalesCount(4, 'saleable product') for April
+- e.g. `getSalesCount(4, 'saleable product') for April`
 
 The formula considers the 2020 data imported from unleashed too.
 
