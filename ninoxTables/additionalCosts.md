@@ -1,8 +1,8 @@
 # Additiona Costs
 
-The additional costs table is used to store information about additional costs added to an order, these will very often be shipping, but can also be other costs (for example donations).
+The additional costs table is used to store information about additional costs added to an [order](salesOrders.md), these will very often be shipping, but can also be other costs (for example donations).
 
-Costs will be auto imported from Shopify on Shopify orders, for manually added orders, there are ‘add shipping’ / ‘add additional costs’ options on the orders. Depending which one is used, the ‘shipping’ boolean field will either be set to true or false.
+Costs will be auto [imported from Shopify](../integromatScenarios/shopifyOrdersToNinox.md) on Shopify orders, for manually added orders, there are ‘add shipping’ / ‘add additional costs’ options on the orders. Depending which one is used, the ‘shipping’ boolean field will either be set to true or false.
 
 Additionally, when adding shipping through the ‘add shipping’ option, the vat rate on the additional cost record will automatically be set to 20%, for costs added under the ‘add additional costs’ section, the vat rate can be picked (0 or 20%)
 
