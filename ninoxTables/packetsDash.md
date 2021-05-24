@@ -17,11 +17,11 @@ Operations performed through this table can be seen via the `operations log` opt
 
 Below, the way in which each of the possible operations work is explained.
 
-# Batch creation
+## Batch creation
 
 Batch creation accessed via the `new packets` button on other parts of the packets dashboard, and also on the packing dash, or through the `set-up new packest and labels` button on the homepage.
 
-It consists of
+It consistss of
 
 - batch action 1 (creation)
 - seedlot action 2 (adjustment)
@@ -57,10 +57,71 @@ Finally, the user can create the batch
 
 Throughout this section, there are a number of additional formula fields which display ore information about the product being created, and expected usage figures. These formulae appear to the right of any input fields.
 
-# Batch adjustment/ disassembly
+## Batch adjustment/ disassembly
 
-# Seedlot adjustment
+Batch adjustment and disassembly works by a very similar mechanism, with some of the fields being shared between the two.
 
-# Seedlot zeroing & batch creation
+When we are changing the size of a batch, we do not directly change the remaining size (as this is a formula field). Instead, the remaining size takes into account any completed adjustments.
 
-# Seedlot creation
+Batch adjustment is
+
+- batch action 2
+- accessed via
+  - `change packets` button on other areas of the packets dash and packing dash
+  - `changes to number of packets` button on the home page
+
+Batch disassembly is
+
+- batch action 3
+- seedlot action 2
+  - as we are also adjusting the seedlot when making a batch disasembly.
+- accessed via
+  - `empty packets back to seedlots` button on home
+  - `empty packets` button on other areas of the packets dashboard and the packing dashboard.
+
+We use the difference in batch action to differentiate between the two, allowing us to show slightly varied fields/ treat data slightly differently/ different complete buttons.
+
+Both follow the same steps when completing the process.
+
+First, select the batch.
+
+- this has a lengthy on update trigger which is used to update the adjustment/ disassembly information fields shown to the right of the input fields.
+  - these fields are primarily used with disassemblies.
+  - the update trigger calculates these values using data from the assembly dashboard when the batch was assembled.
+
+Next, the user can input the number of packets they would like to adjust the batch by/ disassemble.
+
+- there is an update trigger on this field which will update some of the information fields as above.
+- the update trigger will also clear the value entered if
+  - it will adjust the batch to be greater than the start size
+  - it will adjust the batch to be less than 0
+  - it is a decimal
+
+Before completing the adjustment/ disassembly the user can add a comment.
+
+Finally, the user can complete the adjustment/ disassembly.
+
+There are 2 different buttons depending on whether it is a batch/ disassembly.
+
+- if it is an adjustment
+  - we clear the information fields
+  - set information in other areas of this record
+    - likely unnecessary now...
+  - set this record to `locked`
+  - then finally create a new adjustment record and open it
+- if it is a disassembly
+  - we do as above,
+  - but we also adjust the size of the seedlot
+  - set the seedlot action to 2
+  - add seedlot adjustment information to this record for future reference
+- a lot of the logic (particularly which sets value on other areas of the packets dash) could likely be removed with no consequence
+- It exists as...
+  - this is one of the oldest parts of the system
+  - when switching between operations in the past, we just changed the batch/ seedlot action of the current record, and cleaned up any fields when operations were completed.
+  - now, we create a new record if we want to switch operation, meaning we do not have to worry about information in other areas.
+
+## Seedlot adjustment
+
+## Seedlot zeroing & batch creation
+
+## Seedlot creation
