@@ -51,7 +51,7 @@ At the top of the table is some information about the order
   - `If` the `order complete` boolean field is set on the order, the state will be completed
     - `order complete` is generally set once a shipment is completed that sets the order state to be completed, sometimes this fails to set, these cases are caught by the [set unset ninox order complete states](../integromatScenarios/setUnsetOrderStates.md) integromat scenario.
     - this exists to avoid the expensive order state calculation on every single order in various places in the system
-  - `Else`, if the order state override is set, the order state will be equal to this.
+  - `Else if` the order state override is set, the order state will be equal to this.
   - `Else`, we calculate the state
     - `If` nothing has been added to shipments/ credit notes, the order is `parked` (default state)
     - `Else if` the number of order items in shipments/ cn's is not equal to the total quantity of items on the order, the order is `backordered`
@@ -59,3 +59,88 @@ At the top of the table is some information about the order
     - `Else if` all shipments are completed, the order is `completed`
     - `Else`, the order is `Allocated`, this state usually only exists very briefly between all items being alocated and the user completing the shipment
   - As the state calculations are using `else`, we don't need to check for every condition at each step, only a single defining condition of that state.
+- Discount
+  - This field is generally unused
+  - if it is set, any items added will automatically be given that discount
+  - the discount can be applied to existing items via the `apply order discount to existing items` button
+    - this only works for orders which are not from Shopify, and which are not `completed`
+
+Next are a number of formula fields
+
+- order items in shipments
+- order items in cn's
+- order items in shipments & cn's
+  - sum of order items in shipments & order items in cn's
+- allocated order items
+  - sum of order item quantity which has been allocated to a batch within a shipment
+- wholesale prices
+  - `true` if the attached customer is a `retailer`
+  - if this is `true`, wholesale prices are used rather than retail prices when manually adding items to the order.
+- order weight
+  - total weight of all order items, used in postage calculations
+- total additional costs
+  - sum of additional costs
+    - mainly shipping
+    - sometimes other things e.g. shares
+- total order items value
+- total order value
+  - total additional costs + total order items value - credit note values
+- amount paid
+  - sum of payments
+- paid
+  - if amount paid > total order value
+
+Then, functionality to create picklists (shipments) and to duplicate the order
+
+- all items ready?
+  - if there are no items left to assign to shipments/ cn's this will be `false`
+  - if all items remaining to be assigned to shipments/ cn's have sufficient available quantity, it will be `true`
+    - available quantity includes the quantity in batches (which do not have to be assembled yet) minus quantity which has already been assigned to a shipment
+- the create picklist button
+  - this works similarly to the buttons on the order management view used to create picklists (though it obviously only creates a picklist for this order)
+  - the main difference is that those buttons will only make picklists if `all items ready` is true (and therefore all items can be added to a shipment)
+  - this button will create partial picklists, missing out items which are not ready (thus making the order state `backordered`)
+  - this button is much more rarely used now.
+- the duplicate order button
+  - this duplicates the order and changes a number of things
+  - a new order code (SO-) is generated
+  - shipments, payments and credit notes are deleted from the duped order
+  - the original orders comments are added, with a note of which order it is a duplicte of
+  - order states & shopify fields are cleared
+  - time placed is set to `now()`
+
+show view...
+
+- order items
+- shipments
+- payments
+- invoices
+- emails
+- credit notes
+
+options to add to order
+
+- add order lines
+- add shipping
+- add additional costs
+- add payments
+
+more functionality...
+
+- save
+- default add order item quantity
+- create credit note
+- order complete
+
+admin section...
+
+- canAddNewItems
+- validAddNewItems
+- newOrder
+- Items missing to create picklists
+- Total VAT
+- Items ex VAT
+- Costs ex VAT
+- Cancel Order
+- Email pro-forma invoice
+- display records buttons/ hide create record on popup
