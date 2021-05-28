@@ -146,19 +146,66 @@ Options to add to order is only visible when the `canAddNewItems` formula is `tr
 more functionality...
 
 - save
+  - does not actually save..
+  - just closes the record
 - default add order item quantity
+  - the default quantity set when adding order lines
+  - useful when adding a large order with many items quantity 5
 - create credit note
+  - creates and links a new credit note record to this order record
 - order complete
+  - set when a shipment is complete which sets the `order state` to `completed`
+  - occasionally, when this fails, it is set by the [set unset order states](../integromatScenarios/setUnsetOrderStates.md)
+  - if this is true, the `order state` will automatically be `completed`
+    - this makes `order state` calculation much quicker over thousands of records
 
-admin section...
+This section contains fields and buttons only visible if admin mode is activated (`isAdminMode()` = `true`)
 
 - canAddNewItems
+  - if `true`
+    - `options to add to order` will show
+  - `true` if
+    - the order is not `completed`
+    - the order is not a shopify import
+    - a customer has been selected
 - validAddNewItems
+  - if `true`
+    - the user will be able to add that line to the order
+  - `true` if
+    - the order line the user is trying to add has a product selected
+    - the order line the user is trying to add has a quantity > 0
 - newOrder
+  - if `true`
+    - the order will be hidden from some views
+      - e.g [order management](salesOrderDash.md)
+  - `true` if
+    - the number of order items is 0
 - Items missing to create picklists
+  - number of order items which:
+    - have quantity left to be assigned to shipments
+    - have insufficient quantity remaining of that product to add the items to a shipment
+  - displayed on the order management table
 - Total VAT
+  - sum of all VAT on the order
+  - includes both order items VAT and additional costs VAT
 - Items ex VAT
+  - sum of the ex VAT amount of all order items on the order
 - Costs ex VAT
+  - sum of the ex VAT amount of all additional costs on the order
 - Cancel Order
+  - Double checks the user would like to cancel the order
+  - if `yes`
+    - sets the override to canceled
+    - sets the order complete state to false
+    - deletes all shipments
+    - if there was at least 1 shipment which is complete
+      - sends an email to `mandamerz@seedcooperative.org.uk` alerting of this
 - Email pro-forma invoice
+  - this allows users to send an invoice prior to any [shipment and invoice](shipmentsAndInvoices.md) being created/ completed
+  - it has never actually been used.. and the print layout (`Invoice` on this record) may need some changes too..
 - display records buttons/ hide create record on popup
+  - display record buttons works similarly to almost every other table..
+    - it uses the [displayRecordButtons()](../ninoxGeneral/globalFunctions/displayRecordButtons.md) global function
+  - hide create record on popup is much less used
+    - its purpose is to hide the `create record` button when selecting a saleable product to add to order
+    - it works by calling the [hideCreateRecordOnPopup()](../ninoxGeneral/globalFunctions/hideCreateRecordOnPopup.md) global function if admin mode is not activated (i.e. `not isAdminMode()`)
