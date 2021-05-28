@@ -109,7 +109,8 @@ Then, functionality to create picklists (shipments) and to duplicate the order
   - order states & shopify fields are cleared
   - time placed is set to `now()`
 
-show view...
+Show view is a choice box used to display/ hide different views on a sales order record. It shows these via the relationships mentioned above.
+The available options are:
 
 - order items
 - shipments
@@ -118,12 +119,29 @@ show view...
 - emails
 - credit notes
 
-options to add to order
+Options to add to order is only visible when the `canAddNewItems` formula is `true`.
 
 - add order lines
+  - allows users to select saleable products, assign a quantity, and add those products to an order
+  - can optionally add a discount
+  - default add order item quantity can be set to use a default quantity when adding items
+  - integrated with stock control functionality
+    - users will be warned when adding items which should not be sold
+    - if the sale state changes as a result of adding an item, it will trigger the [stock control updates](../integromatScenarios/stockControlUpdates.md) integromat scenario
 - add shipping
+  - automatically calculates which shipping to use based on the order weight
+  - creates, populates and links an additional cost record
 - add additional costs
+  - allows manual adding of additional costs to an order
+  - mainly used for shares
 - add payments
+  - allows a payment to be added with a payment method & payment amount
+  - as mentioned above, this option is possible to use without `canAddNewItems` being `true`.
+  - it works via an on update trigger on the table, setting `options to add to order` to `add payments` if
+    - the order is not paid
+    - show view is 3
+    - not `canAddNewItems`
+  - in its current form, this workaround is slightly clunky, it may be something to look at
 
 more functionality...
 
