@@ -27,4 +27,4 @@ This process could likely be automated far more e.g. by
 - automating the upload of the files to Ninox
   - via the api, either with Integromat or more manual interaction
 
-Though ultimately, the pictures are uploaded so infrequently (after the initial migraton) this just is not worth while.
+Though ultimately, the pictures are uploaded so infrequently (after the initial migraton) this is not worth while.
