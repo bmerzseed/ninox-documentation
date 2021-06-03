@@ -1,4 +1,4 @@
-# Assembly Dashboard
+<!-- # Assembly Dashboard
 
 The Assembly Dashboard will primarily be accessed via the [packing dashboard](packingDash.md), and is used when users of the system are filling small/ bulk packets.
 
@@ -24,4 +24,37 @@ Also, if you are in admin mode at this step, there will be additional usage info
 - an actual estimated figure, rather than the estimated \* 1.4 figure
 - the actual used figure (start weight/ count - end weight/ count)
 
-### lots more here abt how the buttons work etc
+### lots more here abt how the buttons work etc -->
+
+# Assembly Dashboard
+
+The assembly dashboard serves as a place for users to 'assemble' [batches](batches.md), recording the amount of seed they used, and whether they were able to make the entire batch. Depending on the data they give, the batch size and the size of the [seedlot](seedlots.md) used to create the batch will be adjusted
+
+Along with being an interface for users to perform assemblies through, it also serves as a storage of the information they entered while assembling a batch.
+
+Records of the assembly dashboard have a relationship with the batches table
+
+- there can be many assembly dashboard records to a single batches record
+- in reality, there should only ever be a single record
+  - batches imported from the old system will have no records
+  - if a batch somehow has 2 records, a warning will be displayed when completing the assembly telling the user to alert an admin
+  - if a batch has no records, it will not be shown on the [packing dashboard](packingDash.md) and will therefore likely be missed by users
+    - if it is caught that it's missing, there will be a button to create the missing assembly dashboard record on the batches record
+
+Users will primarily access assembly dashboard records via the [packing dashboard](packingDash.md), where there are views showing the small packets/ bulk labels to assemble, with links to their assembly dash records
+
+The first section of the assembly dash serves as a navigation section/ display of general information
+
+- firstly, there are buttons to close the record, and to return to the homepage.
+- saleable product
+  - formula field showing the product name that is being assembled
+- number of packets to make
+  - equal to the start size of the batch
+  - this is the number of packets/ labels that should have printed
+- batch number
+  - formula field showing the batch number of the linked batch
+- seedlot
+  - formula field showing the seedlot to take seed from when assembling this batch
+  - this is also the seedlot the adjustments will be applied to
+
+The next section is the main data input area when users are completing assemblies. The exact fields seen here will depend on the type of batch being assembled (`sm` or `bk`, and `seeds` or `grams`)
