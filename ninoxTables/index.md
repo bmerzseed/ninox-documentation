@@ -58,5 +58,5 @@ At the time of writing this documentation, I tried to organise the links below i
 - [Stock Groups](stockGroups.md)
 - [Stock Group Triggers](stockGroupTriggers.md)
 - [Stock Take](stockTake.md)
-- [Stock Take Batches](stockTakeBatches.md)
-- [Stock Take Seedlots](stockTakeSeedlots.md)
+  - [Stock Take Batches](stockTakeBatches.md)
+  - [Stock Take Seedlots](stockTakeSeedlots.md)
