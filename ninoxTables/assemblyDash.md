@@ -58,3 +58,23 @@ The first section of the assembly dash serves as a navigation section/ display o
   - this is also the seedlot the adjustments will be applied to
 
 The next section is the main data input area when users are completing assemblies. The exact fields seen here will depend on the type of batch being assembled (`sm` or `bk`, and `seeds` or `grams`)
+
+- Seedlot weight count (before/ after)
+  - these are used by users to enter the seed they weighed before filling the packets, and the remaining amount of this seed once they finished filling the packets
+    - the difference will be used in adjustment calculations and shown in fields on this table if the user has admin mode activated
+  - these fields will be autofilled for bulk labels
+- approximate weight to start with
+  - this gives users an idea of how much to weigh out for their starting weight figure
+  - it is equal to `1.4 times` the expected usage amount
+  - this formula field contains a semi-complicated rounding formula, showing a varying number of decimal places depending on the size of the figure
+    - i.e. more decimal places for a smaller value
+  - the expected usage figure it uses in its calculations will ne
+    - equal to the packet size `if`
+      - `stored as` = `seeds`
+      - `product type` = `bk`
+      - `seedcount exempt` = `true`
+- units
+  - formula field which shows the units this product is stored in
+  - takes the value directly from the component product
+  - `seeds` or `grams`
+-
