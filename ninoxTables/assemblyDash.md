@@ -2,13 +2,13 @@
 
 The Assembly Dashboard will primarily be accessed via the [packing dashboard](packingDash.md), and is used when users of the system are filling small/ bulk packets.
 
-Assembly dashboard has a single relationship - 1 [batch](batches.md) can have many assembly dashboard records. In reality, this is a 1 to 1 relationship, as every (new) batch should have an assembly dashboard record, but should never have more than 1 record. Upon the creation of a batch via the [[packets dashboard](packetsDash.md)](packetsDash.md), we generate and link this assembly dashboard record to the batch record.
+Assembly dashboard has a single relationship - 1 [batch](batches.md) can have many assembly dashboard records. In reality, this is a 1 to 1 relationship, as every (new)  [batch](batches.md) should have an assembly dashboard record, but should never have more than 1 record. Upon the creation of a  [batch](batches.md) via the [[packets dashboard](packetsDash.md)](packetsDash.md), we generate and link this assembly dashboard record to the  [batch](batches.md) record.
 
-The basic idea of the dashboard is to give users an overview of what they’re making, how much they’re making, and what they need to make it. It also serves as a way of recording how much seed they actually end up using, whether or not they managed to make up the whole batch, and whether or not they finished off the seedlot. If the data entered seems erroneous, there are also checks in place to warn them of this.
+The basic idea of the dashboard is to give users an overview of what they’re making, how much they’re making, and what they need to make it. It also serves as a way of recording how much seed they actually end up using, whether or not they managed to make up the whole  [batch](batches.md), and whether or not they finished off the seedlot. If the data entered seems erroneous, there are also checks in place to warn them of this.
 
 At the top of the dashboard is a navigation bar, telling the user they’re on the assembly dashboard and also providing buttons to close the record/ navigate to home.
 
-Next are 4 fields, showing the user the product they are making, how many packets they are making, the batch number, and the seedlot to use. These cannot be edited & are just for information.
+Next are 4 fields, showing the user the product they are making, how many packets they are making, the  [batch](batches.md) number, and the seedlot to use. These cannot be edited & are just for information.
 
 Following that is the main area of the dashboard, providing information about how much seed to weigh out to start with, the units of the seed, and what packet size should be used for the product they are creating.
 Along with being a source of information, this is also where users can enter data about the assembly.
@@ -17,7 +17,7 @@ seedlot weight/ count (before) and (after) are used by entering the amount of se
 
 The amount of seed that they should weigh out before making the packets is suggested by ‘approximate weight to start with’, which is equal to 1.4 times the expected amount of seed that they are going to use.
 
-In the case of bulk labels, the values for weight/ count before and after will be autofilled when the batch is created via the [packets dashboard](packetsDash.md).
+In the case of bulk labels, the values for weight/ count before and after will be autofilled when the  [batch](batches.md) is created via the [packets dashboard](packetsDash.md).
 
 Also, if you are in admin mode at this step, there will be additional usage information visible to you:
 
@@ -28,17 +28,17 @@ Also, if you are in admin mode at this step, there will be additional usage info
 
 # Assembly Dashboard
 
-The assembly dashboard serves as a place for users to 'assemble' [batches](batches.md), recording the amount of seed they used, and whether they were able to make the entire batch. Depending on the data they give, the batch size and the size of the [seedlot](seedlots.md) used to create the batch will be adjusted
+The assembly dashboard serves as a place for users to `assemble` [batches](batches.md), recording the amount of seed they used, and whether they were able to make the entire [batch](batches.md). Depending on the data they give, the [batch](batches.md) size and the size of the [seedlot](seedlots.md) used to create the [batch](batches.md) will be adjusted
 
-Along with being an interface for users to perform assemblies through, it also serves as a storage of the information they entered while assembling a batch.
+Along with being an interface for users to perform assemblies through, it also serves as a storage of the information they entered while assembling a [batch](batches.md).
 
 Records of the assembly dashboard have a relationship with the [batches](batches.md) table
 
 - there can be many assembly dashboard records to a single [batches](batches.md) record
 - in reality, there should only ever be a single record
   - [batches](batches.md) imported from the old system will have no records
-  - if a batch somehow has 2 records, a warning will be displayed when completing the assembly telling the user to alert an admin
-  - if a batch has no records, it will not be shown on the [packing dashboard](packingDash.md) and will therefore likely be missed by users
+  - if a [batch](batches.md) somehow has 2 records, a warning will be displayed when completing the assembly telling the user to alert an admin
+  - if a [batch](batches.md) has no records, it will not be shown on the [packing dashboard](packingDash.md) and will therefore likely be missed by users
     - if it is caught that it's missing, there will be a button to create the missing assembly dashboard record on the [batches](batches.md) record
 
 Users will primarily access assembly dashboard records via the [packing dashboard](packingDash.md), where there are views showing the small packets/ bulk labels to assemble, with links to their assembly dash records
@@ -60,15 +60,15 @@ The first section of the assembly dash serves as a navigation section/ display o
 - saleable product
   - formula field showing the product name that is being assembled
 - number of packets to make
-  - equal to the start size of the batch
+  - equal to the start size of the [batch](batches.md)
   - this is the number of packets/ labels that should have printed
-- batch number
-  - formula field showing the batch number of the linked batch
+- [batch](batches.md) number
+- formula field showing the [batch](batches.md) number of the linked [batch](batches.md)
 - seedlot
-  - formula field showing the seedlot to take seed from when assembling this batch
+  - formula field showing the seedlot to take seed from when assembling this [batch](batches.md)
   - this is also the seedlot the adjustments will be applied to
 
-The next section is the main data input area when users are completing assemblies. The exact fields seen here will depend on the type of batch being assembled (`sm` or `bk`, and `seeds` or `grams`)
+The next section is the main data input area when users are completing assemblies. The exact fields seen here will depend on the type of [batch](batches.md) being assembled (`sm` or `bk`, and `seeds` or `grams`)
 
 - Seedlot weight count (before/ after)
   - these are used by users to enter the seed they weighed before filling the packets, and the remaining amount of this seed once they finished filling the packets
@@ -96,29 +96,29 @@ The next section is the main data input area when users are completing assemblie
 - est seedlot weight adjustment
   - only shown if `isAdminMode()` = `true`
 - `WERE YOU ABLE TO MAKE UP ALL PACKETS?` / `HOW MANY WERE YOU ABLE TO MAKE UP?` / `Batch size adjustment amount`
-  - all 3 of these fields interact with eachother, providing users the ability to make all/ only part of the given batch
+  - all 3 of these fields interact with eachother, providing users the ability to make all/ only part of the given [batch](batches.md)
     - these links work via on update triggers on each of the fields, clearing/ calculating values depending on options selected and values entered
   - were you able to make up all packets?
     - boolean field
     - if `yes`
       - all packets have been assembled
       - the [batches](batches.md) starting `remaining size` will be equal to the [batches](batches.md) `start size`
-      - no adjustment will be created once the assembly is complete, and so the batch will be the full size
+      - no adjustment will be created once the assembly is complete, and so the [batch](batches.md) will be the full size
     - if `no`
       - not all packets could be assembled
       - the [batches](batches.md) starting `remaining size` will be less than the [batches](batches.md) `start size`
         - it could potentially be as low as zero
-      - an adjustment will be created once the assembly is complete, this will adjust the batch
+      - an adjustment will be created once the assembly is complete, this will adjust the [batch](batches.md)
       - `how many were you able to make up` will show, allowing the user to input the number they were actually able to make
   - how many were you able to make up?
     - if not all packets could be made, this field needs a value
-    - an adjustment will be created on completion to adjust the batch to this size
+    - an adjustment will be created on completion to adjust the [batch](batches.md) to this size
     - changing this value updates `batch size adjustment amount`
-  - batch size adjustment amount
-    - this is the size of the adjustment created on the batch once the assembly is completed
-    - as batch remaining size works via a formula, the existence of this adjustment will change the size
+  - [batch](batches.md) size adjustment amount
+  - this is the size of the adjustment created on the [batch](batches.md) once the assembly is completed
+  - as [batch](batches.md) remaining size works via a formula, the existence of this adjustment will change the size
 - 200 seeds wt
-  - this will only show if the batch requires a seedcount, and the seed count has been completed
+  - this will only show if the [batch](batches.md) requires a seedcount, and the seed count has been completed
   - it calculates the weight of 200 seeds based on the 1000 seed weight
   - it can be used to quickly calibrate the scales with their largest supported sample size
 - spoons used
@@ -126,7 +126,7 @@ The next section is the main data input area when users are completing assemblie
   - users should enter the spoon they used in this box, doing this will display the spoon used for future small packet assemblies using this seedlot
 - finished seedlot
   - a boolean field
-  - having this option activated will cause the sisze of the seedlot the batch was made from to be adjusted to zero upon completion of the assembly
+  - having this option activated will cause the sisze of the seedlot the [batch](batches.md) was made from to be adjusted to zero upon completion of the assembly
   - there is an option when creating the packet (via the [packets dashboard](packetsDash.md) to leave a comment on the assembly record, giving the user a suggestion to set this option to `true`
 - override warnings/ checks
   - boolean field
@@ -137,12 +137,12 @@ The next section is the main data input area when users are completing assemblie
   - difference between expected usage and actual usage
   - filled upon completion of the assembly
 - comments
-  - displays comments filled during the batch creation
+  - displays comments filled during the [batch](batches.md) creation
   - also allows users to add additional comments
 
 Once the user has filled in the required information, flipping the `completable` formula to true, they will be able to see the `complete assembly` button, this button is quite complex & does a number of things...
 
-- First, it checks there is exactly one `batch creation` [packets dashboard](packetsDash.md) record linked to the batch we are assembling
+- First, it checks there is exactly one `batch creation` [packets dashboard](packetsDash.md) record linked to the [batch](batches.md) we are assembling
   - if there is more of less than 1 it will tell the user to alert an admin
   - this alert has not shown as of the time of writing this
 - Next, we check if we should show warnings/ errors
@@ -165,9 +165,9 @@ Once the user has filled in the required information, flipping the `completable`
     - we continue execution
 - finally, we are ready to complete the assembly
   - this runs via the `performAssembly()` function
-    - this sets values on the [packets dashboard](packetsDash.md) batch creation record
-    - if the user said they were not able to make up all packets, we also create an additional [packets dashboard](packetsDash.md) record to adjust the size of the batch
-    - we then set the batch to assembled, allowing it to be used in allocations
+    - this sets values on the [packets dashboard](packetsDash.md) [batch](batches.md) creation record
+    - if the user said they were not able to make up all packets, we also create an additional [packets dashboard](packetsDash.md) record to adjust the size of the [batch](batches.md)
+    - we then set the [batch](batches.md) to assembled, allowing it to be used in allocations
     - we then trick all of the other records to update in the assembly dashboard table
       - this is done due to the heavy use of on update triggers, it allows them to retain the correct values
     - finally, we set the `completed by` and `percentage deviation` fields
@@ -175,6 +175,6 @@ Once the user has filled in the required information, flipping the `completable`
     - we also call the `processSeedlotFinished()` function
     - this adjusts the size of the seedlot to zero
     - and also creates a `seedlot adjustment` [packets dashboard](packetsDash.md) record to make a note of this
-- finally, we reopen the[packing dashboard](packingDash.md)
+- finally, we reopen the [packing dashboard](packingDash.md)
 
 There are also a number of fields which are shown at the bottom of the view, but only if `isAdminMode()` is equal to `true`
