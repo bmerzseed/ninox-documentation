@@ -178,3 +178,23 @@ Once the user has filled in the required information, flipping the `completable`
 - finally, we reopen the [packing dashboard](packingDash.md)
 
 There are also a number of fields which are shown at the bottom of the view, but only if `isAdminMode()` is equal to `true`
+
+- `isValidAssembly`
+  - This checks data has been inputted
+  - for seed based bulks
+    - requires able to make all is true `or` (false `and` number able to make has been entered)
+  - for everything else
+    - requires able to make all is true `or` (false `and` number able to make has been entered)
+    - also requires before/ after figures have been entered
+  - used as part of the `completable` formula
+- `completable`
+  - `true if`
+    - batch is not assembled
+    - `isValidAssembly` = `true`
+    - the seed count is okay
+      - either it is not needed
+      - or it has been completed
+      - or override warnings/ checks is on
+- the relationship link to the parent [batch](batches.md)
+- upper bound numeric adjustment
+  - used to calculate the `usable size` of a [seedlot](seedlots.md) by subtracting this figure if the batch is unassembled
