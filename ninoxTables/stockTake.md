@@ -14,6 +14,8 @@ This table has 2 children, [stock take batches](stockTakeBatches.md) and [stock 
 Records in this table can be created by the `create stock take` button on the [homepage](home.md)
 
 - doing this will also create stock take batches and stock take seedlots records for all of the batches/ seedlots which have remaining size > 0, and link them to the newly created stock take record
+- the stock take code will be generated using the [getNextStockTakeCode()](../ninoxGeneral/globalFunctions/getNextStockTakeCode.md)
+  - this works identically to other `getCode()` functions, taking the number from the [numbers](numbers.md) record, and incrementing it after
 - There are instructions on the stock take table on how to add a new stock take batches/ seedlots record
   - this will generally be done for seedlots/ batches which we thought had remaining size 0
   - but actually have remaining size > 0
