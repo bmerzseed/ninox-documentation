@@ -21,27 +21,27 @@ Below, the way in which each of the possible operations work is explained.
 
 Batch creation accessed via the `new packets` button on other parts of the packets dashboard, and also on the packing dash, or through the `set-up new packest and labels` button on the homepage.
 
-It consistss of
+It consists of
 
 - batch action 1 (creation)
 - seedlot action 2 (adjustment)
 
-As to make a batch, we also need to adjust the quantity remaining in a Seedlot. When inputing information to create the new batch, seedlot action is not set (in order to hide seedlot adj fields), once the batch has been created, the seedlot action is set and these fields become visible.
+As to make a [batch](batchces.md), we also need to adjust the quantity remaining in a [Seedlot](seedlots.md). When inputing information to create the new batch, seedlot action is not set (in order to hide seedlot adj fields), once the batch has been created, the seedlot action is set and these fields become visible.
 
 The process itself requires choosing the packet type (`sm` or `bk`), when a new batch creation is created, this option will automatically be set to its last value
 
 - This means users can easily make many bulks/ small packets consecutively without having to manually set this value every time.
 
-The next step of the batch creation process is to select the saleable product which you would like to make up.
+The next step of the batch creation process is to select the [saleable product](saleableProds.md) which you would like to make up.
 
 - The previously selected `product type` will be used as a constraint in this selection to only show small packets or bulk labels depending on the selection.
 - Additionally, once the saleable product is selected, a table of displaying past sales for this product will be displayed.
   - This uses data from the [past sales](pastSales.md) table
 
-Once a saleable product is selected, the next step is for the user to select the seedlot which will be used to make the selected product.
+Once a [saleable product](saleableProds.md) is selected, the next step is for the user to select the [seedlot](seedlots.md) which will be used to make the selected product.
 
-- The previously selected saleable product will be used as a constraint here in order to only show relevant seedlots of the relevant component product.
-- Once a seedlot is selected, a button to `use up seedlot` will appear, pressing this will auto fill the comments section, and set the number of packets to make to the expected maximum possible from the selected seedlot.
+- The previously selected saleable product will be used as a constraint here in order to only show relevant seedlots of the relevant [component product](componentProds.md).
+- Once a [seedlot](seedlots.md) is selected, a button to `use up seedlot` will appear, pressing this will auto fill the comments section, and set the number of packets to make to the expected maximum possible from the selected [seedlot](seedlots.md).
 
 Next, the user inputs the number of packets to create (defaults at 1).
 
@@ -53,7 +53,7 @@ Next, the user inputs the number of packets to create (defaults at 1).
 
 Before completing the creation, the user can add any comments, these will show when users are assembling the packets.
 
-Finally, the user can create the batch
+Finally, the user can create the [batch](batches.md)
 
 Throughout this section, there are a number of additional formula fields which display ore information about the product being created, and expected usage figures. These formulae appear to the right of any input fields.
 
@@ -114,7 +114,7 @@ There are 2 different buttons depending on whether it is a batch/ disassembly.
   - but we also adjust the size of the seedlot
   - set the seedlot action to 2
   - add seedlot adjustment information to this record for future reference
-- a lot of the logic (particularly which sets value on other areas of the packets dash) could likely be removed with no consequence
+- a lot of the logic (particularly which sets values on other areas of the packets dash) could likely be removed with no consequence
 - It exists as...
   - this is one of the oldest parts of the system
   - when switching between operations in the past, we just changed the batch/ seedlot action of the current record, and cleaned up any fields when operations were completed.
