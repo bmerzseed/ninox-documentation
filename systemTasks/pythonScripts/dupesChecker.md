@@ -30,3 +30,9 @@ Upon run, it first gets data from the `config.json` file, this file stores infor
   }
 ]
 ```
+
+We then check that data, finding any records with more than one occurance. (i.e. there is a duplicate)
+
+We then load up the data of the number of duplicates on the previous run, and compare the new numbers of duplicates against this.
+
+If for any, there are now more duplicates than there were before, or there are duplicates that we did not have duplicates of before, we send an email via the [duplicate alerts](../../integromatScenarios/ninoxDuplicateAlerts.md) Integromat scenario
