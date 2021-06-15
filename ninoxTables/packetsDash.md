@@ -122,6 +122,70 @@ There are 2 different buttons depending on whether it is a batch/ disassembly.
 
 ## Seedlot adjustment
 
+Seedlot adjustments involve a change to the remaining size of a seedlot.
+
+Unlike batch adjustments, the remaining size of a seedlot is not a formula calculated based on its child adjustments, it is instead a numerical field whos value is changed when the adjustment is completed. The seedlot adjustment packets dash record then just serves as a record of this.
+
+Seedlot adjustments have `seedlot action` of 2
+
+They are also part of batch creation/ batch disassembly.
+
+They are created via the `changes to seedlots` button the [homepage](home.md) and the `change seedlot` button on the [packets dash](packetsDash.md) / [packing dash](packingDash.md)
+
+The form itself works in the following way
+
+- first the user selects whether they want to adjust the seedlot by an amount, or to a certain amount
+  - depending on this selection, the `*amount to adjust seedlot by` / `*amount to adjust seedlot to` fields will be writable/ unwritable, and a box showing the user where to input information will appear
+- next, the user selects the seedlot, this will automatically fill the `amount remaining in seedlot` field to display to the user how much is left, and also to serve as a record of how much was left when the adjustment is completed
+- next, the user should enter data in either `*amount to adjust seedlot by` or `*amount to adjust seedlot to` depending on the `*adjustment type` they selected
+- the user can then (optionally) add a comment
+
+Once all of the data has been input validly, the user wil be able to complete the adjustment
+
+The completion button will
+
+- Check the adjustment is valid
+- Check the adjustment is not too large
+  - if it is larger than the size of the largest bulk of this product, the user will have to confirm they would definitely like to complete the adjustment
+- assuming it is fine to go ahead we continue
+- then we lock the record so no future changes can be made
+- we change the size of the seedlots `remaining size`
+- we create a new `seedlot adjustment` and open this record
+
 ## Seedlot zeroing & batch creation
 
+Seedlot zeroing and batch creation serves as a way of finishing off a seedlot, whilst making a given number of small packets.
+
+Though this could be done via a seedlot adjustment/ batch creation, this was created to allow users to complete the task in a single, simple action.
+
+Actions of this type have
+
+- batch action 4
+- seedlot action 3
+
+They are created via the `Tiny batches to empty seedlot` button on other records of the [packets dash](packetsDash.md) and [packing dash](packingDash.md)
+
+Creating one of these actions on the packets dash via the buttons will autofill the comments with a message
+
+Using the form just requires the user to select a seedlot, and give a number of packets they would like to create from the seedlot
+
+Once this is done, they can complete via the `zero seedlots and create packets` button, this will do the following
+
+- Calculate the batch number and check it is valid & things have not desyncd
+- Create a new batch, filling in the relevant fields
+- create a new assembly dash record for the batch, autofilling comments and the `finished seedlot` field
+- create the print queue record
+  - this allows users to print the batches packets when they are ready via the buttons on the packing dash
+- lock this record and switch to a new one
+
 ## Seedlot creation
+
+This was originally created as a way of adding new seedlots to the system
+
+It has never been used, as seedlots are intended to be added via some purchase order functionality, which is not yet implemented
+
+Instead, seedlots are manually added by interacting with the table directly.
+
+This action uses seedlot action 1
+
+It is likely very little of this code will be used when the purchase order functionality is finally implemented
