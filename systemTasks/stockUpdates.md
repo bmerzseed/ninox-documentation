@@ -20,4 +20,4 @@ By changing the number of stock groups
   ```
 - This will automatically split the saleable product records (fairly evenly) between the specified number of stock groups
 
-The total time to update all stock groups is equal to `number of stock groups` \* `time interval of [stock control timed trigger](../integromatScenarios/stockControlTrigger.md)`
+The total time to update all stock groups is equal to `number of stock groups` \* `time interval of `[stock control timed trigger](../integromatScenarios/stockControlTrigger.md)
