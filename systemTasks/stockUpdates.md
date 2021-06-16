@@ -13,7 +13,7 @@ By changing the number of stock groups
 - The number of stock groups can be changed by creating/ deleting stock groups records until you have the desired amount.
 - Then go to the 'stock groups' view of the saleable products table and go to 'update multiple records'. Set the calculated value for stock group to:
 
-- ```
+- ```javascript
   let thisID := number(id)
   let numStockGroups := cnt(select 'stock groups')
   first(select 'stock groups'[groupNum = thisID % numStockGroups + 1])
