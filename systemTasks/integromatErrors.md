@@ -16,4 +16,8 @@ Though there is a small library of these error codes below, the internet is ofte
 - `[40x] - collection error`
   - this usually indicates an error with the data you are trying to manipulate/ obtaining data in an incorrect way
   - try switching the way you're doing things
--
+- `[429] - runtime error`
+  - this is a common error occuring on Dropbox modules, it seems to occur if multiple sources are trying to write to dropbox simultaneously
+  - the error still occurs fairly regularly, usually on the [batch printing](../integromatScenarios/batchPrintingBarcode.md) scenario, and occasionally on the [a4 printing](../integromatScenarios/a4Printing.md) scenario
+  - we did add sleep times to the [batch printing](../integromatScenarios/batchPrintingBarcode.md) scenario, this helped slightly
+  - and there is also the [batch print err handling](../integromatScenarios/batchPrintErrHandling.md) scenario which means that although these 429 errors happen, we will retry 5 times for each batch, with this in place, printing has not failed in months.
